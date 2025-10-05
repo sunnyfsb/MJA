@@ -14,6 +14,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@300;400;500;700&family=Noto+Serif+JP:wght@200;400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <style>
     /* ========== RESET & GLOBAL ========== */
     * {
@@ -669,8 +670,65 @@
     }
 
     /* ========== AFFILIATIONS ========== */
-    .affiliations-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px; margin-top: 50px; }
-    .affiliation-item { background: #fff; padding: 30px 20px; border-radius: 15px; text-align: center; box-shadow: var(--shadow); }
+    .affiliations-carousel {
+      position: relative;
+      margin-top: 50px;
+      overflow: hidden;
+    }
+
+    .affiliations-grid {
+      display: flex;
+      gap: 20px;
+      transition: transform 0.5s ease;
+    }
+
+    .affiliation-item {
+      background: #fff;
+      padding: 25px 20px;
+      border-radius: 15px;
+      text-align: center;
+      box-shadow: var(--shadow);
+      width: 268px;
+      height: 224px;
+      flex-shrink: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .carousel-controls {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 30px;
+    }
+
+    .carousel-btn {
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      border: none;
+      background: var(--primary);
+      color: white;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      transition: var(--transition);
+    }
+
+    .carousel-btn:hover {
+      background: var(--secondary);
+      transform: translateY(-2px);
+    }
+
+    .carousel-btn:disabled {
+      background: #ccc;
+      cursor: not-allowed;
+      transform: none;
+    }
     .affiliation-logo { width: 80px; height: 80px; margin: 0 auto 15px; background: var(--light); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: var(--secondary); font-size: 2em; }
 
     /* ========== CONTACT ========== */
@@ -1363,7 +1421,8 @@
   <div class="container">
     <h2 class="section-title">Our Affiliations</h2>
     <p class="section-subtitle">Recognized by leading educational and government institutions</p>
-    <div class="affiliations-grid">
+    <div class="affiliations-carousel">
+      <div class="affiliations-grid" id="affiliations-slider">
       <div class="affiliation-item">
         <div class="affiliation-logo"><i class="fas fa-university"></i></div>
         <h4>NAVTTC</h4>
@@ -1382,7 +1441,21 @@
       <div class="affiliation-item">
         <div class="affiliation-logo"><i class="fas fa-handshake"></i></div>
         <h4>PJC Bridge</h4>
-        <p>Pakistan Japan Cultural Bridge</p>
+        <p>Practical Japanese Communication Exam</p>
+      </div>
+      <div class="affiliation-item">
+		<div class="affiliation-logo"><i class="fas fa-university"></i></div>
+        <h4>FCCI</h4>
+        <p>The Faisalabad Chamber of Commerce & Industry</p>
+      </div>
+      </div>
+      <div class="carousel-controls">
+        <button class="carousel-btn" id="prev-btn">
+          <i class="fas fa-chevron-left"></i>
+        </button>
+        <button class="carousel-btn" id="next-btn">
+          <i class="fas fa-chevron-right"></i>
+        </button>
       </div>
     </div>
   </div>
@@ -1394,10 +1467,10 @@
     <h2 class="section-title">Contact Us</h2>
     <div class="contact-container">
       <div class="contact-info">
-        <p><strong>Address:</strong> P-479, 1st Floor, Main Jhumra Road, Abdullahpur, Faisalabad</p>
+        <p><strong>Address:</strong> 1st floor, P-479, main Jhumra Rd, near National Bank of Pakistan, Abdullahpur, Faisalabad</p>
         <p><strong>Contact Person:</strong> Adil Rashid</p>
-        <p><strong>Phone:</strong> +92 306-6811100</p>
-        <p><strong>PTLC:</strong> +92 41-78713222</p>
+        <p><strong>Mobile:</strong> +92 306-6811100</p>
+        <p><strong>Phone:</strong> +92 41-8713222</p>
         <p><strong>Email:</strong> <a href="mailto:nihonschoolpk@gmail.com">nihonschoolpk@gmail.com</a></p>
       </div>
       <div class="contact-form">
@@ -1410,7 +1483,8 @@
       </div>
     </div>
     <div class="map">
-      <iframe src="https://maps.google.com/maps?q=31.42333,73.10722&z=15&output=embed" allowfullscreen="" loading="lazy"></iframe>
+		<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3404.7384967141143!2d73.1031866!3d31.4213302!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x392269002fffcee5%3A0xe1f79427c38a4795!2sNihon%20School%20of%20Japanese%20Language%20(SMC-PRIVATE)%20Limited..!5e0!3m2!1sen!2s!4v1759676885628!5m2!1sen!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      <!-- <iframe src="https://maps.google.com/maps?q=31.42333,73.10722&z=15&output=embed" allowfullscreen="" loading="lazy"></iframe> -->
     </div>
   </div>
 </section>
@@ -1650,6 +1724,42 @@
   document.addEventListener('DOMContentLoaded', function() {
     const scrollTopBtn = document.getElementById('scroll-top-fab');
     scrollTopBtn.style.display = 'none';
+  });
+
+  // Affiliations Carousel
+  $(document).ready(function() {
+    let currentSlide = 0;
+    const totalSlides = $('.affiliation-item').length;
+    const visibleSlides = 4; // Show 4 cards at a time
+    const maxSlide = totalSlides - visibleSlides;
+
+    function updateCarousel() {
+      const translateX = -currentSlide * (268 + 20); // 268px width + 20px gap
+      $('#affiliations-slider').css('transform', `translateX(${translateX}px)`);
+
+      // Update button states
+      $('#prev-btn').prop('disabled', currentSlide === 0);
+      $('#next-btn').prop('disabled', currentSlide >= maxSlide);
+    }
+
+    // Previous button
+    $('#prev-btn').click(function() {
+      if (currentSlide > 0) {
+        currentSlide--;
+        updateCarousel();
+      }
+    });
+
+    // Next button
+    $('#next-btn').click(function() {
+      if (currentSlide < maxSlide) {
+        currentSlide++;
+        updateCarousel();
+      }
+    });
+
+    // Initialize carousel
+    updateCarousel();
   });
 </script>
 
