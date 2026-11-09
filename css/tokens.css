@@ -1,0 +1,66 @@
+/* ==========================================================================
+   DESIGN TOKENS – "Hinode × Faisalabad"
+   Palette: ink navy, indigo, hinomaru red, sakura, washi white, gold leaf.
+   ========================================================================== */
+
+/* Self-hosted fonts (Latin subsets). Japanese uses system CJK fonts;
+   the Urdu face is downloaded only when Urdu text is actually rendered. */
+@font-face{font-family:"Shippori Mincho";font-weight:600;font-style:normal;font-display:swap;
+  src:url(/assets/fonts/shippori-mincho-latin-600-normal.woff2) format("woff2")}
+@font-face{font-family:"Shippori Mincho";font-weight:800;font-style:normal;font-display:swap;
+  src:url(/assets/fonts/shippori-mincho-latin-800-normal.woff2) format("woff2")}
+@font-face{font-family:"Zen Kaku Gothic New";font-weight:400;font-style:normal;font-display:swap;
+  src:url(/assets/fonts/zen-kaku-gothic-new-latin-400-normal.woff2) format("woff2")}
+@font-face{font-family:"Zen Kaku Gothic New";font-weight:700;font-style:normal;font-display:swap;
+  src:url(/assets/fonts/zen-kaku-gothic-new-latin-700-normal.woff2) format("woff2")}
+@font-face{font-family:"Noto Naskh Arabic";font-weight:400;font-style:normal;font-display:swap;
+  src:url(/assets/fonts/noto-naskh-arabic-arabic-400-normal.woff2) format("woff2")}
+@font-face{font-family:"Noto Naskh Arabic";font-weight:700;font-style:normal;font-display:swap;
+  src:url(/assets/fonts/noto-naskh-arabic-arabic-700-normal.woff2) format("woff2")}
+
+:root{
+  /* colour */
+  --ink:#0b1b33;  --ink-2:#12294a;  --indigo:#1d3557;
+  --red:#d7263d;  --red-2:#ff4d63;  --red-deep:#a81a2e;
+  --sakura:#f6c6d0;  --sakura-2:#fbe4e9;
+  --washi:#faf6f0;  --washi-2:#f1ebe0;
+  --gold:#c9a24b;
+  --text:#1c2740;  --text-soft:#4a5671;  --text-inv:#eef2fa;  --text-inv-soft:#b9c4dc;
+  --wa:#1fa855;
+
+  /* glass */
+  --glass-bg:rgba(255,255,255,.58);
+  --glass-bg-dark:rgba(18,41,74,.5);
+  --glass-border:rgba(255,255,255,.7);
+  --glass-border-dark:rgba(255,255,255,.16);
+  --glass-blur:18px;
+  --shadow-1:0 1px 2px rgba(11,27,51,.06),0 8px 24px rgba(11,27,51,.08);
+  --shadow-2:0 2px 4px rgba(11,27,51,.06),0 18px 50px rgba(11,27,51,.16);
+  --shadow-red:0 10px 30px rgba(215,38,61,.35);
+
+  /* type */
+  --font-display:"Shippori Mincho","Hiragino Mincho ProN","Yu Mincho","Noto Serif JP",Georgia,serif;
+  --font-body:"Zen Kaku Gothic New","Hiragino Sans","Yu Gothic","Noto Sans JP",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --fs-0:clamp(.95rem,.92rem + .15vw,1.05rem);
+  --fs-1:clamp(1.1rem,1rem + .5vw,1.3rem);
+  --fs-2:clamp(1.35rem,1.15rem + 1vw,1.75rem);
+  --fs-3:clamp(1.9rem,1.4rem + 2.4vw,3.1rem);
+  --fs-hero:clamp(2.1rem,1.2rem + 3.6vw,4.1rem);
+
+  /* space & shape */
+  --gutter:clamp(16px,4vw,32px);
+  --max:1200px;
+  --sec-y:clamp(72px,10vw,128px);
+  --r-sm:12px; --r-md:20px; --r-lg:28px; --r-pill:999px;
+  --nav-h:84px;
+
+  /* motion */
+  --ease:cubic-bezier(.22,1,.36,1);
+  --t-fast:.2s; --t-med:.45s; --t-slow:.9s;
+}
+
+/* Language-specific typography (set on <html lang>) */
+html[lang="ur"]{--font-display:"Noto Naskh Arabic","Noto Nastaliq Urdu","Jameel Noori Nastaleeq",serif;
+  --font-body:"Noto Naskh Arabic","Noto Nastaliq Urdu","Segoe UI",Tahoma,sans-serif}
+html[lang="ur"] body{line-height:1.95}
+html[lang="ja"] body{line-height:1.9;letter-spacing:.02em}
