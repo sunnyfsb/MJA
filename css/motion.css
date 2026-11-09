@@ -1,0 +1,30 @@
+/* ==========================================================================
+   MOTION – reveal states, split text, sakura particles, reduced-motion
+   Reveal hiding is applied only when JS adds .js-motion to <html>,
+   so content is never hidden if scripts fail.
+   ========================================================================== */
+.js-motion [data-reveal]{opacity:0;transform:translateY(34px)}
+.js-motion [data-reveal].is-in{opacity:1;transform:none;transition:opacity .9s var(--ease),transform .9s var(--ease);transition-delay:var(--d,0s)}
+
+/* Split-word heading reveal */
+.w{display:inline-block;overflow:hidden;vertical-align:top;padding-bottom:.08em}
+.w>span{display:inline-block;transform:translateY(105%);transition:transform .9s var(--ease);transition-delay:calc(var(--i) * 55ms)}
+.hero__text.is-active .w>span,.w.is-shown>span{transform:none}
+html:not(.js-motion) .w>span{transform:none}
+
+/* Sakura particles (CSS only; count controlled in JS) */
+.sakura{position:fixed;inset:0;z-index:5;pointer-events:none;overflow:hidden}
+.petal{position:absolute;inset-block-start:-30px;width:var(--s);height:calc(var(--s) * .75);background:linear-gradient(135deg,#fbd5de,#f4a6b6);
+  border-radius:80% 0 80% 0;opacity:.75;animation:fall var(--dur) linear var(--delay) infinite;will-change:transform}
+@keyframes fall{
+  0%{transform:translate3d(0,-5vh,0) rotate(0)}
+  50%{transform:translate3d(var(--dx),55vh,0) rotate(180deg) rotateY(160deg)}
+  100%{transform:translate3d(calc(var(--dx) * -.4),110vh,0) rotate(360deg) rotateY(320deg);opacity:.2}}
+
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important;scroll-behavior:auto!important}
+  .js-motion [data-reveal]{opacity:1;transform:none}
+  .w>span{transform:none}
+  .sakura,.fab--wa::before{display:none}
+  .marquee{overflow-x:auto}
+}
