@@ -32,6 +32,7 @@
   <link rel="stylesheet" href="/css/base.css">
   <link rel="stylesheet" href="/css/components.css">
   <link rel="stylesheet" href="/css/sections.css">
+  <link rel="stylesheet" href="/css/media.css">
   <link rel="stylesheet" href="/css/motion.css">
 
   <!-- Structured data: EducationalOrganization -->
@@ -99,6 +100,9 @@
     <symbol id="i-play" viewBox="0 0 24 24"><path d="m6 3 14 9-14 9z"/></symbol>
     <symbol id="i-building" viewBox="0 0 24 24"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M9 22v-4h6v4M8 6h.01M16 6h.01M12 6h.01M8 10h.01M16 10h.01M12 10h.01M8 14h.01M16 14h.01M12 14h.01"/></symbol>
     <symbol id="i-handshake" viewBox="0 0 24 24"><path d="m11 17 2 2a1 1 0 1 0 3-3M14 14l2.5 2.5a1 1 0 1 0 3-3l-3.88-3.88a3 3 0 0 0-4.24 0l-.88.88a1 1 0 1 1-3-3l2.81-2.81a5.79 5.79 0 0 1 7.06-.87l.47.28a2 2 0 0 0 1.42.25L21 4M21 3l1 11h-2M3 3 2 14l6.5 6.5a1 1 0 1 0 3-3M3 4h8"/></symbol>
+    <symbol id="i-images" viewBox="0 0 24 24"><rect x="7" y="3" width="14" height="14" rx="2"/><path d="M3 7v12a2 2 0 0 0 2 2h12"/><path d="m7 14 4-4 3 3 2-2 5 5"/></symbol>
+    <symbol id="i-zoom" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3M11 8v6M8 11h6"/></symbol>
+    <symbol id="i-external" viewBox="0 0 24 24"><path d="M15 3h6v6M10 14 21 3M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></symbol>
   </defs>
 </svg>
 
@@ -133,9 +137,9 @@
         <li><a href="#home" data-i18n="nav.home">Home</a></li>
         <li><a href="#about" data-i18n="nav.about">About</a></li>
         <li><a href="#courses" data-i18n="nav.courses">Courses</a></li>
-        <li><a href="#why" data-i18n="nav.why">Why Us</a></li>
         <li><a href="#team" data-i18n="nav.team">Team</a></li>
-        <li><a href="#affiliations" data-i18n="nav.affiliations">Affiliations</a></li>
+        <li><a href="#news" data-i18n="nav.news">News</a></li>
+        <li><a href="#gallery" data-i18n="nav.gallery">Gallery</a></li>
         <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
       </ul>
       <div class="nav__menu-actions">
@@ -253,12 +257,11 @@
         <p data-i18n="about.p2">Located in Abdullahpur, Faisalabad, our school offers a supportive and immersive learning environment led by experienced educators. We provide comprehensive courses from beginner to advanced levels, tailored to meet diverse learning needs and career aspirations.</p>
       </article>
 
-      <figure class="bento__photo" data-reveal>
+      <figure class="bento__photo bento__photo--ceo" data-reveal>
         <picture>
-          <source type="image/webp" srcset="/assets/img/about-480.webp 480w, /assets/img/about.webp 960w" sizes="(max-width: 900px) 100vw, 45vw">
-          <img src="/assets/img/about.jpg" width="800" height="417" loading="lazy" decoding="async" data-i18n-attr="alt:about.imgAlt" alt="A red pagoda-style pavilion beside a mountain lake">
+          <source type="image/webp" srcset="/assets/img/about-ceo-480.webp 480w, /assets/img/about-ceo.webp 960w" sizes="(max-width: 900px) 100vw, 45vw">
+          <img src="/assets/img/about-ceo.jpg" width="960" height="960" loading="lazy" decoding="async" data-i18n-attr="alt:about.imgAlt" alt="CEO Adil Rashid at his desk in the Nihon School office">
         </picture>
-        <span class="bento__kanji" aria-hidden="true" lang="ja">学</span>
       </figure>
 
       <div class="bento__features">
@@ -430,8 +433,10 @@
 
       <article class="glass glass--dark card member" data-reveal data-tilt>
         <div class="member__photo">
-          <!-- EDIT: swap teacher-placeholder.svg for a real photo (square, ~480×480), e.g. assets/img/abdulrehman.jpg -->
-          <img src="/assets/img/teacher-placeholder.svg" width="480" height="480" loading="lazy" decoding="async" alt="Abdulrehman, Teacher at Nihon School (photo coming soon)">
+          <picture>
+            <source type="image/webp" srcset="/assets/img/abdulrehman.webp">
+            <img src="/assets/img/abdulrehman.jpg" width="480" height="480" loading="lazy" decoding="async" alt="Abdulrehman, Teacher at Nihon School">
+          </picture>
         </div>
         <h3>Abdulrehman</h3>
         <p class="member__role" data-i18n="team.abd.role">Teacher</p>
@@ -468,9 +473,165 @@
     <svg class="i i--pause" aria-hidden="true"><use href="#i-pause"/></svg><svg class="i i--play" aria-hidden="true"><use href="#i-play"/></svg>
     <span data-i18n="aff.pause">Pause</span>
   </button>
+
+  <div class="container certs">
+    <h3 class="certs__title" data-reveal data-i18n="cert.title">Certificates &amp; Registration</h3>
+    <div class="certs__grid">
+      <article class="glass card cert" data-reveal>
+        <a class="cert__doc lb-trigger" href="/assets/media/cert-secp.webp" data-lb="certs" data-cap="g.cert-secp" data-thumb="/assets/media/cert-secp-t.webp" data-w="685" data-h="926"><img src="/assets/media/cert-secp-t.webp" width="640" height="865" loading="lazy" decoding="async" style="object-position:top" alt="" data-i18n-attr="alt:g.cert-secp"><span class="zoom-hint" aria-hidden="true"><svg class="i"><use href="#i-zoom"/></svg></span></a>
+        <div class="cert__body">
+          <h4 data-i18n="cert.secp.t"></h4>
+          <p data-i18n="cert.secp.d"></p>
+          <div class="cert__actions">
+            <button type="button" class="btn btn--primary btn--sm" data-lb-open="cert-secp"><svg class="i" aria-hidden="true"><use href="#i-zoom"/></svg><span data-i18n="cert.view">View certificate</span></button>
+            <a class="btn btn--ghost btn--sm" href="https://leap.secp.gov.pk/#/verify-company-info/0266483" target="_blank" rel="noopener"><svg class="i" aria-hidden="true"><use href="#i-external"/></svg><span data-i18n="cert.secp.verify">Verify on SECP</span></a>
+          </div>
+        </div>
+      </article>
+      <article class="glass card cert" data-reveal>
+        <a class="cert__doc lb-trigger" href="/assets/media/cert-certify.webp" data-lb="certs" data-cap="g.cert-certify" data-thumb="/assets/media/cert-certify-t.webp" data-w="720" data-h="1017"><img src="/assets/media/cert-certify-t.webp" width="640" height="904" loading="lazy" decoding="async" style="object-position:top" alt="" data-i18n-attr="alt:g.cert-certify"><span class="zoom-hint" aria-hidden="true"><svg class="i"><use href="#i-zoom"/></svg></span></a>
+        <div class="cert__body">
+          <h4 data-i18n="cert.certify.t"></h4>
+          <p data-i18n="cert.certify.d"></p>
+          <div class="cert__actions">
+            <button type="button" class="btn btn--primary btn--sm" data-lb-open="cert-certify"><svg class="i" aria-hidden="true"><use href="#i-zoom"/></svg><span data-i18n="cert.view">View certificate</span></button>
+            
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
 </section>
 
-<!-- ═════════ 7. OFFICIAL NOTICE ═════════ -->
+<!-- ═════════ 7. NEWS & UPDATES ═════════ -->
+<section class="section section--ink" id="news">
+  <div class="hero__mesh hero__mesh--soft" aria-hidden="true"></div>
+  <div class="section__kanji" aria-hidden="true" lang="ja">便り</div>
+  <div class="container">
+    <header class="section__head" data-reveal>
+      <p class="kicker" data-i18n="news.kicker">Latest</p>
+      <h2 class="section__title" data-i18n="news.title">News &amp; Updates</h2>
+      <p class="section__sub" data-i18n="news.sub"></p>
+    </header>
+    <div class="news">
+      <article class="glass glass--dark card news-card" data-reveal>
+        <a class="news-card__cover lb-trigger" href="/assets/media/ikusei-en.webp" data-lb="news-n1" data-cap="g.ikusei-en" data-thumb="/assets/media/ikusei-en-t.webp" data-w="750" data-h="822"><img src="/assets/media/ikusei-en-t.webp" width="640" height="701" loading="lazy" decoding="async" style="object-position:top" alt="" data-i18n-attr="alt:g.ikusei-en"><span class="news-card__count" aria-hidden="true"><svg class="i"><use href="#i-images"/></svg>3</span></a>
+        <a class="lb-trigger" href="/assets/media/ikusei-ur.webp" data-lb="news-n1" data-cap="g.ikusei-ur" data-thumb="/assets/media/ikusei-ur-t.webp" data-w="743" data-h="817" hidden></a>
+        <a class="lb-trigger" href="/assets/media/esd-2027.webp" data-lb="news-n1" data-cap="g.esd-2027" data-thumb="/assets/media/esd-2027-t.webp" data-w="1280" data-h="853" hidden></a>
+        <div class="news-card__body">
+          <span class="tag" data-i18n="news.n1.tag"></span>
+          <h3 data-i18n="news.n1.t"></h3>
+          <p data-i18n="news.n1.d"></p>
+          <button type="button" class="link-arrow" data-lb-open="ikusei-en"><span data-i18n="news.view">View poster</span><svg class="i i--dir" aria-hidden="true"><use href="#i-arrow-right"/></svg></button>
+        </div>
+      </article>
+      <article class="glass glass--dark card news-card" data-reveal>
+        <a class="news-card__cover lb-trigger" href="/assets/media/test-center.webp" data-lb="news-n2" data-cap="g.test-center" data-thumb="/assets/media/test-center-t.webp" data-w="750" data-h="1116"><img src="/assets/media/test-center-t.webp" width="640" height="952" loading="lazy" decoding="async" style="object-position:top" alt="" data-i18n-attr="alt:g.test-center"><span class="news-card__count" aria-hidden="true"><svg class="i"><use href="#i-images"/></svg>4</span></a>
+        <a class="lb-trigger" href="/assets/media/pjc-web-test.webp" data-lb="news-n2" data-cap="g.pjc-web-test" data-thumb="/assets/media/pjc-web-test-t.webp" data-w="1080" data-h="1080" hidden></a>
+        <a class="lb-trigger" href="/assets/media/stbj-test.webp" data-lb="news-n2" data-cap="g.stbj-test" data-thumb="/assets/media/stbj-test-t.webp" data-w="1067" data-h="954" hidden></a>
+        <a class="lb-trigger" href="/assets/media/stbj-ceo.webp" data-lb="news-n2" data-cap="g.stbj-ceo" data-thumb="/assets/media/stbj-ceo-t.webp" data-w="960" data-h="1280" hidden></a>
+        <div class="news-card__body">
+          <span class="tag" data-i18n="news.n2.tag"></span>
+          <h3 data-i18n="news.n2.t"></h3>
+          <p data-i18n="news.n2.d"></p>
+          <button type="button" class="link-arrow" data-lb-open="test-center"><span data-i18n="news.view">View poster</span><svg class="i i--dir" aria-hidden="true"><use href="#i-arrow-right"/></svg></button>
+        </div>
+      </article>
+      <article class="glass glass--dark card news-card" data-reveal>
+        <a class="news-card__cover lb-trigger" href="/assets/media/alif-partnership.webp" data-lb="news-n3" data-cap="g.alif-partnership" data-thumb="/assets/media/alif-partnership-t.webp" data-w="750" data-h="1123"><img src="/assets/media/alif-partnership-t.webp" width="640" height="958" loading="lazy" decoding="async" style="object-position:top" alt="" data-i18n-attr="alt:g.alif-partnership"><span class="news-card__count" aria-hidden="true"><svg class="i"><use href="#i-images"/></svg>2</span></a>
+        <a class="lb-trigger" href="/assets/media/multan.webp" data-lb="news-n3" data-cap="g.multan" data-thumb="/assets/media/multan-t.webp" data-w="750" data-h="1136" hidden></a>
+        <div class="news-card__body">
+          <span class="tag" data-i18n="news.n3.tag"></span>
+          <h3 data-i18n="news.n3.t"></h3>
+          <p data-i18n="news.n3.d"></p>
+          <button type="button" class="link-arrow" data-lb-open="alif-partnership"><span data-i18n="news.view">View poster</span><svg class="i i--dir" aria-hidden="true"><use href="#i-arrow-right"/></svg></button>
+        </div>
+      </article>
+      <article class="glass glass--dark card news-card" data-reveal>
+        <a class="news-card__cover lb-trigger" href="/assets/media/official-sites.webp" data-lb="news-n6" data-cap="g.official-sites" data-thumb="/assets/media/official-sites-t.webp" data-w="1122" data-h="1402"><img src="/assets/media/official-sites-t.webp" width="640" height="800" loading="lazy" decoding="async" style="object-position:top" alt="" data-i18n-attr="alt:g.official-sites"></a>
+        
+        <div class="news-card__body">
+          <span class="tag" data-i18n="news.n6.tag"></span>
+          <h3 data-i18n="news.n6.t"></h3>
+          <p data-i18n="news.n6.d"></p>
+          <div class="news-links"><div><p class="news-links__h" data-i18n="news.n6.pk"></p><ul><li><a href="https://beoe.gov.pk" target="_blank" rel="noopener"><span data-i18n="news.n6.beoe"></span><small dir="ltr">beoe.gov.pk</small></a></li><li><a href="https://navttc.gov.pk" target="_blank" rel="noopener"><span data-i18n="news.n6.navttc"></span><small dir="ltr">navttc.gov.pk</small></a></li><li><a href="https://jobs.oec.gov.pk" target="_blank" rel="noopener"><span data-i18n="news.n6.oec"></span><small dir="ltr">jobs.oec.gov.pk</small></a></li></ul></div><div><p class="news-links__h" data-i18n="news.n6.jp"></p><ul><li><a href="https://www.moj.go.jp/isa/" target="_blank" rel="noopener"><span data-i18n="news.n6.isa"></span><small dir="ltr">moj.go.jp/isa</small></a></li><li><a href="https://www.otit.go.jp" target="_blank" rel="noopener"><span data-i18n="news.n6.otit"></span><small dir="ltr">otit.go.jp</small></a></li><li><a href="https://www.pk.emb-japan.go.jp" target="_blank" rel="noopener"><span data-i18n="news.n6.emb"></span><small dir="ltr">pk.emb-japan.go.jp</small></a></li></ul></div></div>
+          <button type="button" class="link-arrow" data-lb-open="official-sites"><span data-i18n="news.view">View poster</span><svg class="i i--dir" aria-hidden="true"><use href="#i-arrow-right"/></svg></button>
+        </div>
+      </article>
+      <article class="glass glass--dark card news-card" data-reveal>
+        <a class="news-card__cover lb-trigger" href="/assets/media/study-japan-1.webp" data-lb="news-n4" data-cap="g.study-japan-1" data-thumb="/assets/media/study-japan-1-t.webp" data-w="750" data-h="1127"><img src="/assets/media/study-japan-1-t.webp" width="640" height="962" loading="lazy" decoding="async" style="object-position:top" alt="" data-i18n-attr="alt:g.study-japan-1"><span class="news-card__count" aria-hidden="true"><svg class="i"><use href="#i-images"/></svg>2</span></a>
+        <a class="lb-trigger" href="/assets/media/study-japan-2.webp" data-lb="news-n4" data-cap="g.study-japan-2" data-thumb="/assets/media/study-japan-2-t.webp" data-w="750" data-h="1102" hidden></a>
+        <div class="news-card__body">
+          <span class="tag" data-i18n="news.n4.tag"></span>
+          <h3 data-i18n="news.n4.t"></h3>
+          <p data-i18n="news.n4.d"></p>
+          <button type="button" class="link-arrow" data-lb-open="study-japan-1"><span data-i18n="news.view">View poster</span><svg class="i i--dir" aria-hidden="true"><use href="#i-arrow-right"/></svg></button>
+        </div>
+      </article>
+      <article class="glass glass--dark card news-card" data-reveal>
+        <a class="news-card__cover lb-trigger" href="/assets/media/working-visa.webp" data-lb="news-n5" data-cap="g.working-visa" data-thumb="/assets/media/working-visa-t.webp" data-w="1268" data-h="1187"><img src="/assets/media/working-visa-t.webp" width="640" height="599" loading="lazy" decoding="async" style="object-position:top" alt="" data-i18n-attr="alt:g.working-visa"></a>
+        
+        <div class="news-card__body">
+          <span class="tag" data-i18n="news.n5.tag"></span>
+          <h3 data-i18n="news.n5.t"></h3>
+          <p data-i18n="news.n5.d"></p>
+          <button type="button" class="link-arrow" data-lb-open="working-visa"><span data-i18n="news.view">View poster</span><svg class="i i--dir" aria-hidden="true"><use href="#i-arrow-right"/></svg></button>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ═════════ 8. GALLERY ═════════ -->
+<section class="section section--washi" id="gallery">
+  <div class="blob blob--rose" aria-hidden="true"></div>
+  <div class="blob blob--sky blob--b" aria-hidden="true"></div>
+  <div class="container">
+    <header class="section__head" data-reveal>
+      <p class="kicker" data-i18n="gallery.kicker">Gallery</p>
+      <h2 class="section__title" data-i18n="gallery.title">Life at <em>Nihon School</em></h2>
+      <p class="section__sub" data-i18n="gallery.sub"></p>
+    </header>
+    <div class="gal-filters" role="group" data-i18n-attr="aria-label:gallery.filter" aria-label="Filter gallery" data-reveal>
+      <button type="button" class="gal-filter" data-filter="all" aria-pressed="true" data-i18n="gf.all">All</button>
+      <button type="button" class="gal-filter" data-filter="school" aria-pressed="false" data-i18n="gf.school">Our School</button>
+      <button type="button" class="gal-filter" data-filter="posters" aria-pressed="false" data-i18n="gf.posters">Posters</button>
+      <button type="button" class="gal-filter" data-filter="certs" aria-pressed="false" data-i18n="gf.certs">Certificates</button>
+      <button type="button" class="gal-filter" data-filter="video" aria-pressed="false" data-i18n="gf.video">Video</button>
+    </div>
+    <ul class="gal" id="gal">
+      <li class="gal__item" data-cat="video" data-reveal><a class="gal__link lb-trigger" href="/assets/video/nihon-intro.mp4" data-lb="gallery" data-cap="g.video" data-thumb="/assets/media/video-poster.webp" data-w="464" data-h="832" data-type="video" data-poster="/assets/media/video-poster.webp"><img src="/assets/media/video-poster.webp" width="464" height="832" loading="lazy" decoding="async" style="object-position:50% 30%" alt="" data-i18n-attr="alt:g.video"><span class="gal__play" aria-hidden="true"><svg class="i"><use href="#i-play"/></svg></span><span class="gal__cap" aria-hidden="true" data-i18n="g.video"></span></a></li>
+      <li class="gal__item" data-cat="school" data-reveal><a class="gal__link lb-trigger" href="/assets/media/office.webp" data-lb="gallery" data-cap="g.office" data-thumb="/assets/media/office-t.webp" data-w="1280" data-h="960"><img src="/assets/media/office-t.webp" width="640" height="480" loading="lazy" decoding="async" style="object-position:center" alt="" data-i18n-attr="alt:g.office"><span class="gal__cap" aria-hidden="true" data-i18n="g.office"></span></a></li>
+      <li class="gal__item" data-cat="school" data-reveal><a class="gal__link lb-trigger" href="/assets/media/ceo-desk.webp" data-lb="gallery" data-cap="g.ceo-desk" data-thumb="/assets/media/ceo-desk-t.webp" data-w="1254" data-h="1254"><img src="/assets/media/ceo-desk-t.webp" width="640" height="640" loading="lazy" decoding="async" style="object-position:50% 30%" alt="" data-i18n-attr="alt:g.ceo-desk"><span class="gal__cap" aria-hidden="true" data-i18n="g.ceo-desk"></span></a></li>
+      <li class="gal__item" data-cat="certs" data-reveal><a class="gal__link lb-trigger" href="/assets/media/cert-secp.webp" data-lb="gallery" data-cap="g.cert-secp" data-thumb="/assets/media/cert-secp-t.webp" data-w="685" data-h="926"><img src="/assets/media/cert-secp-t.webp" width="640" height="865" loading="lazy" decoding="async" style="object-position:top" alt="" data-i18n-attr="alt:g.cert-secp"><span class="gal__cap" aria-hidden="true" data-i18n="g.cert-secp"></span></a></li>
+      <li class="gal__item" data-cat="certs" data-reveal><a class="gal__link lb-trigger" href="/assets/media/cert-certify.webp" data-lb="gallery" data-cap="g.cert-certify" data-thumb="/assets/media/cert-certify-t.webp" data-w="720" data-h="1017"><img src="/assets/media/cert-certify-t.webp" width="640" height="904" loading="lazy" decoding="async" style="object-position:top" alt="" data-i18n-attr="alt:g.cert-certify"><span class="gal__cap" aria-hidden="true" data-i18n="g.cert-certify"></span></a></li>
+      <li class="gal__item" data-cat="posters" data-reveal><a class="gal__link lb-trigger" href="/assets/media/test-center.webp" data-lb="gallery" data-cap="g.test-center" data-thumb="/assets/media/test-center-t.webp" data-w="750" data-h="1116"><img src="/assets/media/test-center-t.webp" width="640" height="952" loading="lazy" decoding="async" style="object-position:top" alt="" data-i18n-attr="alt:g.test-center"><span class="gal__cap" aria-hidden="true" data-i18n="g.test-center"></span></a></li>
+      <li class="gal__item" data-cat="posters" data-reveal><a class="gal__link lb-trigger" href="/assets/media/ikusei-en.webp" data-lb="gallery" data-cap="g.ikusei-en" data-thumb="/assets/media/ikusei-en-t.webp" data-w="750" data-h="822"><img src="/assets/media/ikusei-en-t.webp" width="640" height="701" loading="lazy" decoding="async" style="object-position:top" alt="" data-i18n-attr="alt:g.ikusei-en"><span class="gal__cap" aria-hidden="true" data-i18n="g.ikusei-en"></span></a></li>
+      <li class="gal__item" data-cat="posters" data-reveal><a class="gal__link lb-trigger" href="/assets/media/alif-partnership.webp" data-lb="gallery" data-cap="g.alif-partnership" data-thumb="/assets/media/alif-partnership-t.webp" data-w="750" data-h="1123"><img src="/assets/media/alif-partnership-t.webp" width="640" height="958" loading="lazy" decoding="async" style="object-position:top" alt="" data-i18n-attr="alt:g.alif-partnership"><span class="gal__cap" aria-hidden="true" data-i18n="g.alif-partnership"></span></a></li>
+      <li class="gal__item" data-cat="posters" data-reveal><a class="gal__link lb-trigger" href="/assets/media/official-sites.webp" data-lb="gallery" data-cap="g.official-sites" data-thumb="/assets/media/official-sites-t.webp" data-w="1122" data-h="1402"><img src="/assets/media/official-sites-t.webp" width="640" height="800" loading="lazy" decoding="async" style="object-position:top" alt="" data-i18n-attr="alt:g.official-sites"><span class="gal__cap" aria-hidden="true" data-i18n="g.official-sites"></span></a></li>
+      <li class="gal__item" data-cat="posters" data-reveal><a class="gal__link lb-trigger" href="/assets/media/study-japan-1.webp" data-lb="gallery" data-cap="g.study-japan-1" data-thumb="/assets/media/study-japan-1-t.webp" data-w="750" data-h="1127"><img src="/assets/media/study-japan-1-t.webp" width="640" height="962" loading="lazy" decoding="async" style="object-position:top" alt="" data-i18n-attr="alt:g.study-japan-1"><span class="gal__cap" aria-hidden="true" data-i18n="g.study-japan-1"></span></a></li>
+      <li class="gal__item" data-cat="posters" data-reveal><a class="gal__link lb-trigger" href="/assets/media/working-visa.webp" data-lb="gallery" data-cap="g.working-visa" data-thumb="/assets/media/working-visa-t.webp" data-w="1268" data-h="1187"><img src="/assets/media/working-visa-t.webp" width="640" height="599" loading="lazy" decoding="async" style="object-position:top" alt="" data-i18n-attr="alt:g.working-visa"><span class="gal__cap" aria-hidden="true" data-i18n="g.working-visa"></span></a></li>
+      <li class="gal__item" data-cat="posters" data-reveal><a class="gal__link lb-trigger" href="/assets/media/esd-2027.webp" data-lb="gallery" data-cap="g.esd-2027" data-thumb="/assets/media/esd-2027-t.webp" data-w="1280" data-h="853"><img src="/assets/media/esd-2027-t.webp" width="640" height="426" loading="lazy" decoding="async" style="object-position:top" alt="" data-i18n-attr="alt:g.esd-2027"><span class="gal__cap" aria-hidden="true" data-i18n="g.esd-2027"></span></a></li>
+      <li class="gal__item" data-cat="school" data-reveal><a class="gal__link lb-trigger" href="/assets/media/stbj-ceo.webp" data-lb="gallery" data-cap="g.stbj-ceo" data-thumb="/assets/media/stbj-ceo-t.webp" data-w="960" data-h="1280"><img src="/assets/media/stbj-ceo-t.webp" width="640" height="853" loading="lazy" decoding="async" style="object-position:50% 35%" alt="" data-i18n-attr="alt:g.stbj-ceo"><span class="gal__cap" aria-hidden="true" data-i18n="g.stbj-ceo"></span></a></li>
+      <li class="gal__item" data-cat="school" data-reveal><a class="gal__link lb-trigger" href="/assets/media/minna-books.webp" data-lb="gallery" data-cap="g.minna-books" data-thumb="/assets/media/minna-books-t.webp" data-w="720" data-h="1280"><img src="/assets/media/minna-books-t.webp" width="640" height="1138" loading="lazy" decoding="async" style="object-position:50% 40%" alt="" data-i18n-attr="alt:g.minna-books"><span class="gal__cap" aria-hidden="true" data-i18n="g.minna-books"></span></a></li>
+      <li class="gal__item" data-cat="posters" data-reveal><a class="gal__link lb-trigger" href="/assets/media/multan.webp" data-lb="gallery" data-cap="g.multan" data-thumb="/assets/media/multan-t.webp" data-w="750" data-h="1136"><img src="/assets/media/multan-t.webp" width="640" height="969" loading="lazy" decoding="async" style="object-position:top" alt="" data-i18n-attr="alt:g.multan"><span class="gal__cap" aria-hidden="true" data-i18n="g.multan"></span></a></li>
+      <li class="gal__item" data-cat="posters" data-reveal><a class="gal__link lb-trigger" href="/assets/media/ikusei-ur.webp" data-lb="gallery" data-cap="g.ikusei-ur" data-thumb="/assets/media/ikusei-ur-t.webp" data-w="743" data-h="817"><img src="/assets/media/ikusei-ur-t.webp" width="640" height="704" loading="lazy" decoding="async" style="object-position:top" alt="" data-i18n-attr="alt:g.ikusei-ur"><span class="gal__cap" aria-hidden="true" data-i18n="g.ikusei-ur"></span></a></li>
+      <li class="gal__item" data-cat="posters" data-reveal><a class="gal__link lb-trigger" href="/assets/media/study-japan-2.webp" data-lb="gallery" data-cap="g.study-japan-2" data-thumb="/assets/media/study-japan-2-t.webp" data-w="750" data-h="1102"><img src="/assets/media/study-japan-2-t.webp" width="640" height="940" loading="lazy" decoding="async" style="object-position:top" alt="" data-i18n-attr="alt:g.study-japan-2"><span class="gal__cap" aria-hidden="true" data-i18n="g.study-japan-2"></span></a></li>
+      <li class="gal__item" data-cat="posters" data-reveal><a class="gal__link lb-trigger" href="/assets/media/pjc-web-test.webp" data-lb="gallery" data-cap="g.pjc-web-test" data-thumb="/assets/media/pjc-web-test-t.webp" data-w="1080" data-h="1080"><img src="/assets/media/pjc-web-test-t.webp" width="640" height="640" loading="lazy" decoding="async" style="object-position:top" alt="" data-i18n-attr="alt:g.pjc-web-test"><span class="gal__cap" aria-hidden="true" data-i18n="g.pjc-web-test"></span></a></li>
+      <li class="gal__item" data-cat="posters" data-reveal><a class="gal__link lb-trigger" href="/assets/media/stbj-test.webp" data-lb="gallery" data-cap="g.stbj-test" data-thumb="/assets/media/stbj-test-t.webp" data-w="1067" data-h="954"><img src="/assets/media/stbj-test-t.webp" width="640" height="572" loading="lazy" decoding="async" style="object-position:top" alt="" data-i18n-attr="alt:g.stbj-test"><span class="gal__cap" aria-hidden="true" data-i18n="g.stbj-test"></span></a></li>
+      <li class="gal__item" data-cat="posters" data-reveal><a class="gal__link lb-trigger" href="/assets/media/brochure.webp" data-lb="gallery" data-cap="g.brochure" data-thumb="/assets/media/brochure-t.webp" data-w="1024" data-h="1536"><img src="/assets/media/brochure-t.webp" width="640" height="960" loading="lazy" decoding="async" style="object-position:top" alt="" data-i18n-attr="alt:g.brochure"><span class="gal__cap" aria-hidden="true" data-i18n="g.brochure"></span></a></li>
+      <li class="gal__item" data-cat="posters" data-reveal><a class="gal__link lb-trigger gal__link--contain" href="/assets/media/urdu-banner.webp" data-lb="gallery" data-cap="g.urdu-banner" data-thumb="/assets/media/urdu-banner-t.webp" data-w="1280" data-h="376"><img src="/assets/media/urdu-banner-t.webp" width="640" height="188" loading="lazy" decoding="async" alt="" data-i18n-attr="alt:g.urdu-banner"><span class="gal__cap" aria-hidden="true" data-i18n="g.urdu-banner"></span></a></li>
+      <li class="gal__item" data-cat="posters" data-reveal><a class="gal__link lb-trigger" href="/assets/media/jp-teaching.webp" data-lb="gallery" data-cap="g.jp-teaching" data-thumb="/assets/media/jp-teaching-t.webp" data-w="935" data-h="1280"><img src="/assets/media/jp-teaching-t.webp" width="640" height="876" loading="lazy" decoding="async" style="object-position:top" alt="" data-i18n-attr="alt:g.jp-teaching"><span class="gal__cap" aria-hidden="true" data-i18n="g.jp-teaching"></span></a></li>
+      <li class="gal__item" data-cat="school" data-reveal><a class="gal__link lb-trigger" href="/assets/media/pjc-book.webp" data-lb="gallery" data-cap="g.pjc-book" data-thumb="/assets/media/pjc-book-t.webp" data-w="353" data-h="500"><img src="/assets/media/pjc-book-t.webp" width="640" height="907" loading="lazy" decoding="async" style="object-position:top" alt="" data-i18n-attr="alt:g.pjc-book"><span class="gal__cap" aria-hidden="true" data-i18n="g.pjc-book"></span></a></li>
+    </ul>
+    <div class="center gal-more-wrap">
+      <button type="button" class="btn btn--ghost" id="gal-more" aria-expanded="false" aria-controls="gal"><span data-i18n="gallery.more">Show more</span></button>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═════════ 9. OFFICIAL NOTICE ═════════ -->
 <section class="section section--ink section--tight" id="official-notice" aria-labelledby="notice-title">
   <div class="hero__mesh hero__mesh--soft" aria-hidden="true"></div>
   <div class="container">
@@ -486,7 +647,7 @@
   </div>
 </section>
 
-<!-- ═════════ 8. CONTACT ═════════ -->
+<!-- ═════════ 10. CONTACT ═════════ -->
 <section class="section section--washi" id="contact">
   <div class="blob blob--rose" aria-hidden="true"></div>
   <div class="blob blob--sky blob--b" aria-hidden="true"></div>
@@ -563,6 +724,8 @@
           <li><a href="#about" data-i18n="nav.about">About</a></li>
           <li><a href="#courses" data-i18n="nav.courses">Courses</a></li>
           <li><a href="#team" data-i18n="nav.team">Team</a></li>
+          <li><a href="#news" data-i18n="nav.news">News</a></li>
+          <li><a href="#gallery" data-i18n="nav.gallery">Gallery</a></li>
           <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
         </ul>
       </nav>
@@ -594,6 +757,23 @@
     </div>
   </div>
 </footer>
+
+
+<!-- ═════════ Lightbox (shared by news, certificates and gallery) ═════════ -->
+<div class="lb" id="lb" role="dialog" aria-modal="true" data-i18n-attr="aria-label:lb.label" aria-label="Image viewer" hidden>
+  <div class="lb__bar">
+    <p class="lb__count" id="lb-count"></p>
+    <div class="lb__tools">
+      <button type="button" class="lb__btn" id="lb-zoom" aria-pressed="false" data-i18n-attr="aria-label:lb.zoom,title:lb.zoom" aria-label="Zoom"><svg class="i" aria-hidden="true"><use href="#i-zoom"/></svg></button>
+      <button type="button" class="lb__btn" id="lb-close" data-i18n-attr="aria-label:lb.close,title:lb.close" aria-label="Close"><svg class="i" aria-hidden="true"><use href="#i-x"/></svg></button>
+    </div>
+  </div>
+  <div class="lb__stage" id="lb-stage"></div>
+  <button type="button" class="lb__nav lb__nav--prev" id="lb-prev" data-i18n-attr="aria-label:lb.prev" aria-label="Previous"><svg class="i i--dir" aria-hidden="true"><use href="#i-chev-l"/></svg></button>
+  <button type="button" class="lb__nav lb__nav--next" id="lb-next" data-i18n-attr="aria-label:lb.next" aria-label="Next"><svg class="i i--dir" aria-hidden="true"><use href="#i-chev-r"/></svg></button>
+  <p class="lb__cap" id="lb-cap" aria-live="polite"></p>
+  <div class="lb__strip" id="lb-strip" role="group" data-i18n-attr="aria-label:lb.thumbs" aria-label="All images in this set"></div>
+</div>
 
 <!-- Floating actions -->
 <div class="fabs">

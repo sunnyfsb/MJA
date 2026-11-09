@@ -4,12 +4,14 @@ import { initUI } from './ui.js';
 import { initSlider } from './slider.js';
 import { initMotion } from './motion.js';
 import { initForm } from './form.js';
+import { initMedia } from './media.js';
 import { canRun3D } from './env.js';
 
 initI18n();      // first: sets language/dir before anything measures layout
 initUI();
 initSlider();
 initForm();
+initMedia();
 initMotion();
 
 // 3D hero: after first paint, only on capable devices; otherwise static SVG stays.
