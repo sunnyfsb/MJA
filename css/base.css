@@ -13,6 +13,8 @@ html[lang="ur"] h1,html[lang="ur"] h2,html[lang="ur"] h3{line-height:1.6}
 p{margin:0 0 1em}
 ul{list-style:none;margin:0;padding:0}
 a{color:inherit;text-decoration:none}
+/* [hidden] must always win over component display rules (keeps hidden links out of tab order) */
+[hidden]{display:none!important}
 img,picture,svg{display:block;max-width:100%}
 img{height:auto}
 button{font:inherit;color:inherit;cursor:pointer;border:0;background:none;padding:0}

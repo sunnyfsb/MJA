@@ -3,6 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; media-src 'self'; connect-src 'self' https://api.web3forms.com; frame-src https://www.google.com; form-action 'self' https://api.web3forms.com; base-uri 'self'; object-src 'none'; upgrade-insecure-requests">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
   <title>Nihon School of Japanese Language | JLPT, TITP &amp; SSW, Study in Japan – Faisalabad</title>
   <meta name="description" content="Nihon School of Japanese Language (SMC-Private) Limited in Abdullahpur, Faisalabad: JLPT N5–N3 preparation, TITP &amp; SSW training and Japan student consultancy.">
   <meta name="theme-color" content="#0b1b33">
@@ -50,7 +52,7 @@
     "email": "nihonschoolpk@gmail.com",
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "1st floor, P-479, Main Jhumra Road, near National Bank of Pakistan, Abdullahpur",
+      "streetAddress": "1st floor, P‑479, Main Jhumra Road, near National Bank of Pakistan, Abdullahpur",
       "addressLocality": "Faisalabad",
       "addressCountry": "PK"
     },
@@ -690,7 +692,7 @@
       <div class="glass card contact__info" data-reveal>
         <dl>
           <div><dt><svg class="i" aria-hidden="true"><use href="#i-pin"/></svg><span data-i18n="contact.address">Address</span></dt>
-            <dd data-i18n="contact.addressV">1st floor, P-479, main Jhumra Rd, near National Bank of Pakistan, Abdullahpur, Faisalabad</dd></div>
+            <dd data-i18n="contact.addressV">1st floor, P‑479, main Jhumra Rd, near National Bank of Pakistan, Abdullahpur, Faisalabad</dd></div>
           <div><dt><svg class="i" aria-hidden="true"><use href="#i-users"/></svg><span data-i18n="contact.person">Contact Person</span></dt>
             <dd>Adil Rashid</dd></div>
           <div><dt><svg class="i" aria-hidden="true"><use href="#i-phone"/></svg><span data-i18n="contact.mobile">Mobile</span></dt>
@@ -714,13 +716,13 @@
         <input type="hidden" name="from_name" value="Nihon School Website">
         <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
 
-        <div class="field"><input id="f-name" name="name" type="text" required autocomplete="name" placeholder=" ">
+        <div class="field"><input id="f-name" name="name" type="text" required maxlength="100" autocomplete="name" placeholder=" ">
           <label for="f-name" data-i18n="contact.form.name">Your Name</label></div>
-        <div class="field"><input id="f-email" name="email" type="email" required autocomplete="email" placeholder=" ">
+        <div class="field"><input id="f-email" name="email" type="email" required maxlength="254" autocomplete="email" placeholder=" ">
           <label for="f-email" data-i18n="contact.form.email">Your Email</label></div>
-        <div class="field"><input id="f-phone" name="phone" type="tel" autocomplete="tel" placeholder=" ">
+        <div class="field"><input id="f-phone" name="phone" type="tel" maxlength="30" pattern="[0-9\s\+\(\)\-]{7,30}" autocomplete="tel" placeholder=" ">
           <label for="f-phone" data-i18n="contact.form.phone">Phone / WhatsApp (optional)</label></div>
-        <div class="field"><textarea id="f-msg" name="message" rows="4" required placeholder=" "></textarea>
+        <div class="field"><textarea id="f-msg" name="message" rows="4" required minlength="5" maxlength="3000" placeholder=" "></textarea>
           <label for="f-msg" data-i18n="contact.form.msg">Your Message</label></div>
 
         <button type="submit" class="btn btn--primary btn--block magnetic"><span data-i18n="contact.form.send">Send Message</span><svg class="i" aria-hidden="true"><use href="#i-arrow-right"/></svg></button>
@@ -731,7 +733,7 @@
     <div class="map glass" data-reveal>
       <iframe title="Map showing the location of Nihon School in Abdullahpur, Faisalabad" data-i18n-attr="title:contact.map"
         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3404.7384967141143!2d73.1031866!3d31.4213302!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x392269002fffcee5%3A0xe1f79427c38a4795!2sNihon%20School%20of%20Japanese%20Language%20(SMC-PRIVATE)%20Limited..!5e0!3m2!1sen!2s!4v1759676885628!5m2!1sen!2s"
-        width="600" height="450" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        width="600" height="450" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
     </div>
   </div>
 </section>
@@ -751,9 +753,11 @@
           <li><a href="#home" data-i18n="nav.home">Home</a></li>
           <li><a href="#about" data-i18n="nav.about">About</a></li>
           <li><a href="#courses" data-i18n="nav.courses">Courses</a></li>
+          <li><a href="#why" data-i18n="nav.why">Why Us</a></li>
           <li><a href="#team" data-i18n="nav.team">Team</a></li>
           <li><a href="#news" data-i18n="nav.news">News</a></li>
           <li><a href="#gallery" data-i18n="nav.gallery">Gallery</a></li>
+          <li><a href="#affiliations" data-i18n="nav.affiliations">Affiliations</a></li>
           <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
         </ul>
       </nav>
@@ -769,7 +773,7 @@
       <div>
         <h2 data-i18n="footer.contact">Contact Info</h2>
         <ul class="footer__contact">
-          <li><svg class="i" aria-hidden="true"><use href="#i-pin"/></svg><span data-i18n="contact.addressV">P-479, 1st Floor, Main Jhumra Road, Abdullahpur, Faisalabad</span></li>
+          <li><svg class="i" aria-hidden="true"><use href="#i-pin"/></svg><span data-i18n="contact.addressV">P‑479, 1st Floor, Main Jhumra Road, Abdullahpur, Faisalabad</span></li>
           <li><svg class="i" aria-hidden="true"><use href="#i-phone"/></svg><a href="tel:+923066811100" dir="ltr">+92 306-6811100</a></li>
           <li><svg class="i" aria-hidden="true"><use href="#i-mail"/></svg><a href="mailto:nihonschoolpk@gmail.com">nihonschoolpk@gmail.com</a></li>
         </ul>

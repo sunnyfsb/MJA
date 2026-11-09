@@ -22,7 +22,7 @@ export function initForm() {
     // ► Placeholder key not replaced yet → mailto fallback
     if (String(data.get('access_key')).startsWith('YOUR_')) {
       const body = `${data.get('message')}\n\n— ${data.get('name')}${data.get('phone') ? ' (' + data.get('phone') + ')' : ''}\n${data.get('email')}`;
-      say(t('contact.form.setup'), 'is-err');
+      say(t('contact.form.setup'));
       location.href = `mailto:${MAIL}?subject=${encodeURIComponent('Enquiry from nihonschool.com')}&body=${encodeURIComponent(body)}`;
       return;
     }

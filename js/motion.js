@@ -10,7 +10,8 @@ const $$ = (s, r = document) => [...r.querySelectorAll(s)];
 /* ── Split headings into word spans (re-run after language change) ── */
 export function splitHeadings() {
   $$('[data-split]').forEach((el) => {
-    const words = el.textContent.trim().split(/\s+/);
+    const esc = (w) => w.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+    const words = el.textContent.trim().split(/\s+/).map(esc);
     el.setAttribute('aria-label', el.textContent.trim());
     el.innerHTML = words.map((w, i) => `<span class="w" aria-hidden="true" style="--i:${i}"><span>${w}</span></span>`).join(' ');
   });
