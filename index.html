@@ -596,15 +596,11 @@
       <button type="button" class="gal-filter" data-filter="all" aria-pressed="true" data-i18n="gf.all">All</button>
       <button type="button" class="gal-filter" data-filter="school" aria-pressed="false" data-i18n="gf.school">Our School</button>
       <button type="button" class="gal-filter" data-filter="posters" aria-pressed="false" data-i18n="gf.posters">Posters</button>
-      <button type="button" class="gal-filter" data-filter="certs" aria-pressed="false" data-i18n="gf.certs">Certificates</button>
       <button type="button" class="gal-filter" data-filter="video" aria-pressed="false" data-i18n="gf.video">Video</button>
     </div>
     <ul class="gal" id="gal">
       <li class="gal__item" data-cat="video" data-reveal><a class="gal__link lb-trigger" href="/assets/video/nihon-intro.mp4" data-lb="gallery" data-cap="g.video" data-thumb="/assets/media/video-poster.webp" data-w="464" data-h="832" data-type="video" data-poster="/assets/media/video-poster.webp"><img src="/assets/media/video-poster.webp" width="464" height="832" loading="lazy" decoding="async" style="object-position:50% 30%" alt="" data-i18n-attr="alt:g.video"><span class="gal__play" aria-hidden="true"><svg class="i"><use href="#i-play"/></svg></span><span class="gal__cap" aria-hidden="true" data-i18n="g.video"></span></a></li>
       <li class="gal__item" data-cat="school" data-reveal><a class="gal__link lb-trigger" href="/assets/media/office.webp" data-lb="gallery" data-cap="g.office" data-thumb="/assets/media/office-t.webp" data-w="1280" data-h="960"><img src="/assets/media/office-t.webp" width="640" height="480" loading="lazy" decoding="async" style="object-position:center" alt="" data-i18n-attr="alt:g.office"><span class="gal__cap" aria-hidden="true" data-i18n="g.office"></span></a></li>
-      <li class="gal__item" data-cat="school" data-reveal><a class="gal__link lb-trigger" href="/assets/media/ceo-desk.webp" data-lb="gallery" data-cap="g.ceo-desk" data-thumb="/assets/media/ceo-desk-t.webp" data-w="1254" data-h="1254"><img src="/assets/media/ceo-desk-t.webp" width="640" height="640" loading="lazy" decoding="async" style="object-position:50% 30%" alt="" data-i18n-attr="alt:g.ceo-desk"><span class="gal__cap" aria-hidden="true" data-i18n="g.ceo-desk"></span></a></li>
-      <li class="gal__item" data-cat="certs" data-reveal><a class="gal__link lb-trigger" href="/assets/media/cert-secp.webp" data-lb="gallery" data-cap="g.cert-secp" data-thumb="/assets/media/cert-secp-t.webp" data-w="685" data-h="926"><img src="/assets/media/cert-secp-t.webp" width="640" height="865" loading="lazy" decoding="async" style="object-position:top" alt="" data-i18n-attr="alt:g.cert-secp"><span class="gal__cap" aria-hidden="true" data-i18n="g.cert-secp"></span></a></li>
-      <li class="gal__item" data-cat="certs" data-reveal><a class="gal__link lb-trigger" href="/assets/media/cert-certify.webp" data-lb="gallery" data-cap="g.cert-certify" data-thumb="/assets/media/cert-certify-t.webp" data-w="720" data-h="1017"><img src="/assets/media/cert-certify-t.webp" width="640" height="904" loading="lazy" decoding="async" style="object-position:top" alt="" data-i18n-attr="alt:g.cert-certify"><span class="gal__cap" aria-hidden="true" data-i18n="g.cert-certify"></span></a></li>
       <li class="gal__item" data-cat="posters" data-reveal><a class="gal__link lb-trigger" href="/assets/media/test-center.webp" data-lb="gallery" data-cap="g.test-center" data-thumb="/assets/media/test-center-t.webp" data-w="750" data-h="1116"><img src="/assets/media/test-center-t.webp" width="640" height="952" loading="lazy" decoding="async" style="object-position:top" alt="" data-i18n-attr="alt:g.test-center"><span class="gal__cap" aria-hidden="true" data-i18n="g.test-center"></span></a></li>
       <li class="gal__item" data-cat="posters" data-reveal><a class="gal__link lb-trigger" href="/assets/media/ikusei-en.webp" data-lb="gallery" data-cap="g.ikusei-en" data-thumb="/assets/media/ikusei-en-t.webp" data-w="750" data-h="822"><img src="/assets/media/ikusei-en-t.webp" width="640" height="701" loading="lazy" decoding="async" style="object-position:top" alt="" data-i18n-attr="alt:g.ikusei-en"><span class="gal__cap" aria-hidden="true" data-i18n="g.ikusei-en"></span></a></li>
       <li class="gal__item" data-cat="posters" data-reveal><a class="gal__link lb-trigger" href="/assets/media/alif-partnership.webp" data-lb="gallery" data-cap="g.alif-partnership" data-thumb="/assets/media/alif-partnership-t.webp" data-w="750" data-h="1123"><img src="/assets/media/alif-partnership-t.webp" width="640" height="958" loading="lazy" decoding="async" style="object-position:top" alt="" data-i18n-attr="alt:g.alif-partnership"><span class="gal__cap" aria-hidden="true" data-i18n="g.alif-partnership"></span></a></li>
@@ -641,7 +637,39 @@
         <p class="kicker" data-i18n="notice.kicker">Official Notice</p>
         <h2 id="notice-title" data-i18n="notice.title">Important Notice</h2>
         <p data-i18n="notice.body">Certain former staff members are no longer associated with Nihon School of Japanese Language. They are not authorized to represent the institute, collect fees, or make any commitments on its behalf. Nihon School is not responsible for any payments made to, or agreements made with, any person claiming to act on our behalf. Please make payments only through our official channels and verify any representative by contacting our official phone number or email listed on this website.</p>
-        <a class="btn btn--primary magnetic" href="#contact"><span data-i18n="notice.btn">Verify a representative</span><svg class="i i--dir" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
+        <div class="notice__actions">
+          <button type="button" class="btn btn--glass" id="notice-toggle" aria-expanded="false" aria-controls="notice-people"><svg class="i" aria-hidden="true"><use href="#i-users"/></svg><span data-i18n="notice.show">Show former staff names</span></button>
+          <a class="btn btn--primary magnetic" href="#contact"><span data-i18n="notice.btn">Verify a representative</span><svg class="i i--dir" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
+        </div>
+        <div class="notice__people" id="notice-people" hidden>
+          <p class="notice__lead" data-i18n="notice.peopleLead"></p>
+          <ul class="ex-list">
+            <li class="ex">
+              <span class="ex__photo"><span class="ex__initials" aria-hidden="true">NN</span></span>
+              <div class="ex__info">
+                <h3 class="ex__name" data-i18n="notice.name.nimra">Nimra Nasir</h3>
+                <p class="ex__role" data-i18n="notice.role.nimra"></p>
+                <p class="ex__status"><svg class="i" aria-hidden="true"><use href="#i-shield-alert"/></svg><span data-i18n="notice.ex.status">No longer associated</span></p>
+              </div>
+            </li>
+            <li class="ex">
+              <span class="ex__photo"><picture><source type="image/webp" srcset="/assets/img/former/shahbaz-ahmad.webp"><img src="/assets/img/former/shahbaz-ahmad.jpg" width="240" height="240" loading="lazy" decoding="async" alt=""></picture></span>
+              <div class="ex__info">
+                <h3 class="ex__name" data-i18n="notice.name.shahbaz">Shahbaz Ahmad</h3>
+                <p class="ex__role" data-i18n="notice.role.shahbaz"></p>
+                <p class="ex__status"><svg class="i" aria-hidden="true"><use href="#i-shield-alert"/></svg><span data-i18n="notice.ex.status">No longer associated</span></p>
+              </div>
+            </li>
+            <li class="ex">
+              <span class="ex__photo"><picture><source type="image/webp" srcset="/assets/img/former/altaf-hussain.webp"><img src="/assets/img/former/altaf-hussain.jpg" width="240" height="240" loading="lazy" decoding="async" alt=""></picture></span>
+              <div class="ex__info">
+                <h3 class="ex__name" data-i18n="notice.name.altaf">Altaf Hussain</h3>
+                <p class="ex__role" data-i18n="notice.role.altaf"></p>
+                <p class="ex__status"><svg class="i" aria-hidden="true"><use href="#i-shield-alert"/></svg><span data-i18n="notice.ex.status">No longer associated</span></p>
+              </div>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
   </div>

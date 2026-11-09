@@ -191,3 +191,23 @@ html[lang="ur"] .contact__info dt,html[lang="ja"] .contact__info dt{text-transfo
 @media (max-width:540px){.footer__grid{grid-template-columns:1fr}}
 
 @media (max-width:700px){.footer{padding-bottom:96px}}
+
+/* Official notice – former staff list (revealed by button) */
+.notice__actions{display:flex;flex-wrap:wrap;gap:.7rem;margin-top:.4rem}
+.notice__people{margin-top:clamp(20px,3vw,30px);padding-top:clamp(18px,2.6vw,26px);border-top:1px solid rgba(255,255,255,.14)}
+.notice__people.is-open{animation:exIn .5s var(--ease)}
+@keyframes exIn{from{opacity:0;transform:translateY(10px)}}
+.notice .notice__lead{font-size:var(--fs-0);margin-bottom:1.1rem}
+.ex-list{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(10px,1.6vw,16px)}
+.ex{display:flex;align-items:center;gap:.9rem;padding:14px;border-radius:var(--r-md);background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);
+  border-inline-start:3px solid var(--red)}
+.ex__photo{flex:none;width:68px;height:68px;border-radius:50%;overflow:hidden;border:2px solid rgba(255,77,99,.7);background:var(--ink-2);display:grid;place-items:center}
+.ex__photo img{width:100%;height:100%;object-fit:cover}
+.ex__initials{font:700 1.25rem var(--font-body);letter-spacing:.06em;color:var(--sakura)}
+.ex__info{min-width:0}
+.notice .ex__name{font-size:1.12rem;margin:0 0 .1em;color:#fff}
+.notice .ex__role{font-size:.88rem;margin:0;color:var(--text-inv-soft)}
+.notice .ex__status{display:inline-flex;align-items:center;gap:.35em;margin:.4em 0 0;font-size:.78rem;font-weight:700;color:#ff8a9a}
+.ex__status .i{width:1em;height:1em}
+@media (max-width:900px){.ex-list{grid-template-columns:minmax(0,1fr)}}
+@media (prefers-reduced-motion:reduce){.notice__people.is-open{animation:none}}

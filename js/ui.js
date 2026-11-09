@@ -1,5 +1,22 @@
 /** Navbar, mobile menu, notice banner, FABs, scroll-spy, anchor scrolling. */
+import { t } from './i18n.js';
+
 const NOTICE_KEY = 'nihon-notice-dismissed';
+
+/** Official notice: show / hide the former-staff list behind a button. */
+function initFormerStaff() {
+  const btn = document.getElementById('notice-toggle');
+  const panel = document.getElementById('notice-people');
+  if (!btn || !panel) return;
+  const label = () => { btn.querySelector('span').textContent = t(panel.hidden ? 'notice.show' : 'notice.hide'); };
+  btn.addEventListener('click', () => {
+    panel.hidden = !panel.hidden;
+    btn.setAttribute('aria-expanded', String(!panel.hidden));
+    label();
+    if (!panel.hidden) panel.classList.add('is-open');
+  });
+  document.addEventListener('langchange', label);
+}
 
 export function initUI() {
   const nav = document.getElementById('nav');
@@ -8,6 +25,7 @@ export function initUI() {
   const topBtn = document.getElementById('fab-top');
 
   document.getElementById('year').textContent = new Date().getFullYear();
+  initFormerStaff();
 
   // ── Notice banner (session-only dismissal: safety message returns next visit)
   const bar = document.getElementById('notice-bar');
